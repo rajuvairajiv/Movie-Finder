@@ -1,0 +1,151 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Search Box */
+.search-Container {
+    margin-bottom: 20px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.search-form input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    background: #222;
+    color: white;
+}
+
+.search-form button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ff5733;
+    color: white;
+    transition: 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #e64a19;
+}
+
+/* Movie Results Grid */
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Movie Cards */
+.movie-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 280px;
+    object-fit: cover;
+}
+
+.movie-info {
+    padding: 10px 0;
+}
+
+.movie-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.movie-year {
+    font-size: 14px;
+    color: #ffcc00;
+}
+
+/* Hover Effects */
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Loading Message */
+.loading {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+/* Error Message */
+.error-message {
+    font-size: 18px;
+    color: #ff4c4c;
+    font-weight: bold;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .search-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-form input,
+    .search-form button {
+        width: 100%;
+    }
+}
